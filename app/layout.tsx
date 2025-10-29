@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import "../styles/globals.css";
-import { Playfair_Display, Inter } from "next/font/google";
+import "./globals.css";
+import { Inter, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const display = Playfair_Display({ subsets: ["latin"], variable: "--font-display" });
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-export const metadata: Metadata = {
-  title: "Mystic NFC Tarot",
-  description: "NFC-linked tarot readings with luminous guidance.",
+const metadataConfig = {
+  metadataBase: new URL("https://mystic-nfc-tarot.example/"),
+  title: {
+    default: "Mystic NFC Tarot",
+    template: "%s • Mystic NFC Tarot"
+  },
+  description: "Tap a card, ask a question, receive a luminous tarot reading.",
   openGraph: {
     title: "Mystic NFC Tarot",
     description: "Tap a card, ask a question, receive a luminous tarot reading.",
-    url: "https://mystic-nfc-tarot.example",
+    url: new URL("https://mystic-nfc-tarot.example/"),
     siteName: "Mystic NFC Tarot",
     images: [
       {
@@ -30,9 +34,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mystic NFC Tarot",
     description: "Tap a card, ask a question, receive a luminous tarot reading.",
-    images: ["/og-image.svg"]
+    images: [
+      {
+        url: "/og-image.svg",
+        alt: "Celestial tarot interface"
+      }
+    ]
   }
-};
+} satisfies Metadata;
+
+export const metadata: Metadata = metadataConfig;
 
 export default function RootLayout({
   children
