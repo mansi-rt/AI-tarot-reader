@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type ThemeName = "indigo" | "pastel" | "luxe";
@@ -18,7 +18,7 @@ const themeToData = {
   luxe: "luxe"
 } satisfies Record<ThemeName, string>;
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<ThemeName>("indigo");
 
   useEffect(() => {

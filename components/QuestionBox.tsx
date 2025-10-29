@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const anticipationDelay = 450;
@@ -20,7 +20,7 @@ export function QuestionBox({ onReveal, isLoading }: QuestionBoxProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!question.trim()) return;
     await new Promise((resolve) => setTimeout(resolve, anticipationDelay));
