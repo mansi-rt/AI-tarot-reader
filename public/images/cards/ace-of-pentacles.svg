@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640">
+  <defs>
+    <linearGradient id="pentacles-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#20311f" />
+      <stop offset="100%" stop-color="#4f7d3d" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="640" rx="32" fill="url(#pentacles-bg)" />
+  <circle cx="200" cy="240" r="110" fill="#f3f7e3" opacity="0.35" />
+  <polygon points="200,170 218,220 272,220 228,252 244,305 200,274 156,305 172,252 128,220 182,220" fill="#fff6c1" opacity="0.45" />
+  <text x="50%" y="65%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="48" fill="#f7f6d9">Ace of Pentacles</text>
+  <text x="50%" y="75%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#e9f5d3">Seed · Ground · Prosper</text>
+</svg>

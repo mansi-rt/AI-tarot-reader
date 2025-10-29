@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640">
+  <defs>
+    <linearGradient id="cups-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172c3c" />
+      <stop offset="100%" stop-color="#3aaac6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="640" rx="32" fill="url(#cups-bg)" />
+  <path d="M150 220h40v90c0 22-18 40-40 40s-40-18-40-40z" fill="#d4f6ff" opacity="0.35" />
+  <path d="M210 220h40v90c0 22-18 40-40 40s-40-18-40-40z" fill="#f1fbff" opacity="0.35" />
+  <text x="50%" y="65%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="48" fill="#e5faff">Two of Cups</text>
+  <text x="50%" y="75%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#d2f3ff">Exchange · Flow · Harmony</text>
+</svg>
