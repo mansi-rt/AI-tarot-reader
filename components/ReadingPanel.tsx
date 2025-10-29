@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import type { TarotCard } from "@/data/cards";
 
 const prompts = [
@@ -75,29 +75,44 @@ export function ReadingPanel({ card, reading, isLoading, orientation }: ReadingP
   }, [card.slug, reading]);
 
   return (
-    <section className="w-full max-w-2xl">
+    <section className="relative w-full">
+      <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(255,255,255,0.18),_transparent_65%)] blur-3xl" />
       <motion.div
         ref={containerRef}
-        className="relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 p-6 shadow-glass backdrop-blur"
+        className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/5 p-8 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.65)] backdrop-blur"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
         aria-live="polite"
       >
-        <div className="mb-4 flex items-center justify-between text-xs uppercase tracking-[0.35em] text-white/50">
-          <span>{card.name}</span>
-          <span>{orientation === "upright" ? "UPRIGHT" : "REVERSED"}</span>
+        <div className="pointer-events-none absolute -inset-px rounded-[2rem] border border-white/10" />
+        <div className="relative mb-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.35em] text-white/50">
+          <span className="rounded-full border border-white/15 px-3 py-1">{card.name}</span>
+          <span className="rounded-full border border-white/15 px-3 py-1">{orientation}</span>
+          {isLoading && (
+            <motion.span
+              className="ml-auto flex items-center gap-2 rounded-full border border-white/15 px-3 py-1 text-[0.65rem] uppercase tracking-[0.35em] text-white/70"
+              animate={{ opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 1.4, repeat: Infinity }}
+            >
+              <span className="inline-block h-2 w-2 rounded-full bg-[rgb(var(--theme-accent))]" />
+              Shuffling stardust
+            </motion.span>
+          )}
         </div>
-        <motion.p
-          key={reading ?? "placeholder"}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="min-h-[120px] rounded-2xl bg-black/30 p-5 text-lg leading-relaxed text-white/90"
-        >
-          {reading ? reading : isLoading ? "Shuffling stardust…" : "Your guidance will appear here."}
-        </motion.p>
-        <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={reading ?? (isLoading ? "loading" : "placeholder")}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4 }}
+            className="min-h-[140px] rounded-2xl bg-black/35 p-5 text-lg leading-relaxed text-white/90"
+          >
+            {reading ? reading : isLoading ? "Shuffling stardust…" : "Your guidance will appear here."}
+          </motion.p>
+        </AnimatePresence>
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
           <button
             type="button"
             onClick={handleCopy}
@@ -122,11 +137,13 @@ export function ReadingPanel({ card, reading, isLoading, orientation }: ReadingP
           >
             Download
           </button>
-          <div className="ml-auto flex flex-col gap-1 text-white/70">
-            <span className="text-xs uppercase tracking-[0.35em] text-white/40">Reflect further</span>
-            <ul className="list-disc space-y-1 pl-5 text-sm">
+          <div className="ml-auto flex flex-col gap-2 text-white/75">
+            <span className="text-xs uppercase tracking-[0.35em] text-white/45">Reflect further</span>
+            <ul className="grid gap-2 text-sm">
               {journalPrompts.map((prompt) => (
-                <li key={prompt}>{prompt}</li>
+                <li key={prompt} className="rounded-xl bg-white/5 px-3 py-2 text-white/75">
+                  {prompt}
+                </li>
               ))}
             </ul>
           </div>
@@ -136,4 +153,3 @@ export function ReadingPanel({ card, reading, isLoading, orientation }: ReadingP
     </section>
   );
 }
-
