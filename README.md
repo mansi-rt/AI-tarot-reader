@@ -32,7 +32,7 @@ components/            # UI building blocks
 lib/                   # Reading generator + utilities
 data/cards.ts          # Tarot card seed data (expand to 78)
 public/images/cards/   # Placeholder card art
-styles/globals.css     # Tailwind base & theme tokens
+app/globals.css        # Tailwind base & theme tokens
 ```
 
 ## NFC Tagging
