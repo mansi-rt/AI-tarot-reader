@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-background: 11 16 38;
+  --theme-foreground: 243 245 255;
+  --theme-accent: 200 169 89;
+}
+
+[data-theme="pastel"] {
+  --theme-background: 249 236 245;
+  --theme-foreground: 34 24 45;
+  --theme-accent: 202 150 221;
+}
+
+[data-theme="luxe"] {
+  --theme-background: 12 12 15;
+  --theme-foreground: 224 223 210;
+  --theme-accent: 192 178 131;
+}
+
+body {
+  @apply bg-[rgb(var(--theme-background))] text-[rgb(var(--theme-foreground))] font-sans min-h-screen antialiased;
+}
+
+a {
+  @apply text-[rgb(var(--theme-accent))];
+}
+
+input, textarea {
+  @apply text-slate-100;
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 169, 89, 0.5);
+  border-radius: 9999px;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.sparkle::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 1px solid rgba(200, 169, 89, 0.5);
+  filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sparkle:hover::after,
+.sparkle:focus-visible::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
