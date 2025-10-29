@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { motion } from "framer-motion";
 import type { TarotCard } from "@/data/cards";
 import { QuestionBox } from "./QuestionBox";
 import { ReadingPanel } from "./ReadingPanel";
@@ -27,9 +28,14 @@ export function ReadingExperience({ card }: ReadingExperienceProps) {
   );
 
   return (
-    <div className="flex w-full flex-col items-center gap-8">
+    <motion.div
+      className="flex w-full flex-col gap-10 lg:gap-12"
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.6 }}
+    >
       <QuestionBox onReveal={handleReveal} isLoading={loading} />
       <ReadingPanel card={card} reading={reading} isLoading={loading} orientation={orientation} />
-    </div>
+    </motion.div>
   );
 }
