@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import "./globals.css";
+import "../styles/globals.css";
 import { Playfair_Display, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
