@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640">
+  <defs>
+    <linearGradient id="empress-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1f3b" />
+      <stop offset="100%" stop-color="#a0466c" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="640" rx="32" fill="url(#empress-bg)" />
+  <circle cx="140" cy="200" r="80" fill="#ffd9e8" opacity="0.4" />
+  <circle cx="260" cy="240" r="110" fill="#ffe8f3" opacity="0.3" />
+  <text x="50%" y="65%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="52" fill="#ffeef7">The Empress</text>
+  <text x="50%" y="75%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#ffe6f1">Nurture · Bloom · Embody</text>
+</svg>
