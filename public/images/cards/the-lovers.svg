@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640">
+  <defs>
+    <linearGradient id="lovers-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a163c" />
+      <stop offset="100%" stop-color="#b6427b" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="640" rx="32" fill="url(#lovers-bg)" />
+  <path d="M200 200c-60-80-160 20-70 90l70 60 70-60c90-70-10-170-70-90z" fill="#ffd0e5" opacity="0.45" />
+  <text x="50%" y="65%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="52" fill="#ffe6f4">The Lovers</text>
+  <text x="50%" y="75%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#ffdef1">Align · Choose · Devote</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1026" />
+      <stop offset="100%" stop-color="#1E1C3A" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="rgba(200,169,89,0.6)" />
+      <stop offset="100%" stop-color="rgba(200,169,89,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="600" cy="315" r="260" fill="url(#glow)" />
+  <text x="50%" y="45%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="72" fill="#F5F1DD">
+    Mystic NFC Tarot
+  </text>
+  <text x="50%" y="58%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="32" fill="#DED5FF">
+    Tap a card. Ask a question. Reveal the insight.
+  </text>
+</svg>

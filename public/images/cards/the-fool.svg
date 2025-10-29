@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640">
+  <defs>
+    <linearGradient id="fool-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d2a5c" />
+      <stop offset="100%" stop-color="#5b4fb6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="640" rx="32" fill="url(#fool-bg)" />
+  <circle cx="200" cy="220" r="120" fill="#f5f1dd" opacity="0.35" />
+  <text x="50%" y="65%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="54" fill="#fcefb4">The Fool</text>
+  <text x="50%" y="75%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#f9f7ff">Leap · Wonder · Trust</text>
+</svg>

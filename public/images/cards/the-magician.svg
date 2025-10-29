@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="640" viewBox="0 0 400 640">
+  <defs>
+    <linearGradient id="magician-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#201c42" />
+      <stop offset="100%" stop-color="#7a1f7c" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="640" rx="32" fill="url(#magician-bg)" />
+  <path d="M120 200h160l-80 140z" fill="#f7c9ff" opacity="0.4" />
+  <text x="50%" y="65%" text-anchor="middle" font-family="'Playfair Display', serif" font-size="52" fill="#ffe6f9">The Magician</text>
+  <text x="50%" y="75%" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#f6dfff">Focus · Channel · Craft</text>
+</svg>
